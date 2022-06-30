@@ -34,12 +34,7 @@ CREATE TABLE `abonnement` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
-INSERT INTO `abonnement` (`ID_ABONNEMENT`, `Type`, `Prix`) VALUES
-(0, 'loan', '0 euro');
-INSERT INTO `abonnement` (`ID_ABONNEMENT`, `Type`, `Prix`) VALUES
-(1, 'premium', '10 euro');
-INSERT INTO `abonnement` (`ID_ABONNEMENT`, `Type`, `Prix`) VALUES
-(2, 'VIP', '20 euro');
+
 --
 -- Structure de la table `associer`
 --
@@ -50,12 +45,7 @@ CREATE TABLE `associer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
-INSERT INTO `associer` (`ID_CONSULTATION`, `ID_TYPEC`) VALUES
-(0, 0);
-INSERT INTO `associer` (`ID_CONSULTATION`, `ID_TYPEC`) VALUES
-(1, 1);
-INSERT INTO `associer` (`ID_CONSULTATION`, `ID_TYPEC`) VALUES
-(2, 2);
+
 --
 -- Structure de la table `attribuer`
 --
@@ -66,9 +56,7 @@ CREATE TABLE `attribuer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
-INSERT INTO `attribuer` (`ID_PATIENT`, `ID_REGIME`) VALUES
-(6, 0);
---
+
 -- Structure de la table `calendrier`
 --
 
@@ -79,12 +67,7 @@ CREATE TABLE `calendrier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
-INSERT INTO `calendrier` (`ID_CALENDRIER`, `Debut`, `Fin`) VALUES
-(0, '2022-09-24', '2022-10-24');
-INSERT INTO `calendrier` (`ID_CALENDRIER`, `Debut`, `Fin`) VALUES
-(1, '2022-07-12', '2022-07-25');
-INSERT INTO `calendrier` (`ID_CALENDRIER`, `Debut`, `Fin`) VALUES
-(2, '2022-07-10', '2023-01-10');
+
 --
 --
 -- Structure de la table `categoriser`
@@ -94,12 +77,7 @@ CREATE TABLE `categoriser` (
   `ID_CUISINIER` int(11) NOT NULL,
   `ID_CU` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-INSERT INTO `categoriser` (`ID_CUISINIER`, `ID_CU`) VALUES
-(0, 0);
-INSERT INTO `categoriser` (`ID_CUISINIER`, `ID_CU`) VALUES
-(1, 1);
-INSERT INTO `categoriser` (`ID_CUISINIER`, `ID_CU`) VALUES
-(2, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -112,8 +90,6 @@ CREATE TABLE `conseille` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
-INSERT INTO `conseille` (`ID_PATIENT`, `ID_NUTRITIONNISTE`) VALUES
-(6, 0);
 -- Structure de la table `consultation`
 --
 
@@ -125,12 +101,6 @@ CREATE TABLE `consultation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
-INSERT INTO `consultation` (`ID_CONSULTATION`, `Intitulé`, `Date_Rendez_Vous`,`Prix`) VALUES
-(0,'premiere rencontre', '2022-07-10', '10 euro');
-INSERT INTO `consultation` (`ID_CONSULTATION`, `Intitulé`, `Date_Rendez_Vous`,`Prix`) VALUES
-(1,'prise de masse', '2022-08-10', '10 euro');
-INSERT INTO `consultation` (`ID_CONSULTATION`, `Intitulé`, `Date_Rendez_Vous`,`Prix`) VALUES
-(2,'perte de poids', '2022-09-10', '10 euro');
 --
 -- Structure de la table `cuisiner`
 --
@@ -141,24 +111,7 @@ CREATE TABLE `cuisiner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
-INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
-(0, 0);
-INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
-(1, 1);
-INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
-(2, 2);
-INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
-(3, 0);
-INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
-(4, 1);
-INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
-(5, 2);
-INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
-(6, 0);
-INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
-(7, 1);
-INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
-(8, 2);
+
 --
 -- Structure de la table `cuisinier`
 --
@@ -172,12 +125,7 @@ CREATE TABLE `cuisinier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
-INSERT INTO `cuisinier` (`ID_CUISINIER`, `Nom`, `Prénom`, `Grade`, `Pays`) VALUES
-(0, 'Etchebest', 'Philippe', 'chef étoilé', 'france');
-INSERT INTO `cuisinier` (`ID_CUISINIER`, `Nom`, `Prénom`, `Grade`, `Pays`) VALUES
-(1, 'Ducasse', 'Alain', 'chef étoilé', 'france');
-INSERT INTO `cuisinier` (`ID_CUISINIER`, `Nom`, `Prénom`, `Grade`, `Pays`) VALUES
-(2, 'Passard', 'Alain', 'chef étoilé', 'france');
+
 --
 -- Structure de la table `diagnostique`
 --
@@ -188,12 +136,7 @@ CREATE TABLE `diagnostique` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
-INSERT INTO `diagnostique` (`ID_NUTRITIONNISTE`, `ID_CONSULTATION`) VALUES
-(0, 0);
-INSERT INTO `diagnostique` (`ID_NUTRITIONNISTE`, `ID_CONSULTATION`) VALUES
-(0, 1);
-INSERT INTO `diagnostique` (`ID_NUTRITIONNISTE`, `ID_CONSULTATION`) VALUES
-(0, 2);
+
 --
 -- Structure de la table `nutritionniste`
 --
@@ -208,8 +151,6 @@ CREATE TABLE `nutritionniste` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
-INSERT INTO `nutritionniste` (`ID_NUTRITIONNISTE`, `Nom`, `Prénom`, `Ville`, `Téléphone`,`Réseaux`) VALUES
-(0, 'Lacombe', 'Francoise', 'Paris', '0658965423','@FrLacombe');
 --
 -- Structure de la table `objectif`
 --
@@ -218,12 +159,7 @@ CREATE TABLE `objectif` (
   `ID_OBJECTIF` int(11) NOT NULL,
   `Intitulé` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-INSERT INTO `objectif` (`ID_OBJECTIF`, `Intitulé`) VALUES
-(0, 'Perte de 10 kilos');
-INSERT INTO `objectif` (`ID_OBJECTIF`, `Intitulé`) VALUES
-(1, 'Prise de 5 kilos');
-INSERT INTO `objectif` (`ID_OBJECTIF`, `Intitulé`) VALUES
-(2, 'Manger plus équilibré');
+
 -- --------------------------------------------------------
 
 --
@@ -248,8 +184,6 @@ CREATE TABLE `patient` (
 -- Déchargement des données de la table `patient`
 --
 
-INSERT INTO `patient` (`ID_PATIENT`, `Nom`, `Prénom`, `Age`, `Poids`, `Taille`, `IMC`, `Telephone`, `Mail`, `password`, `user_type`) VALUES
-(6, 'oui', 'oui', 8, NULL, NULL, NULL, '0651497986', 'oui@gmail.com', 'cc8c0a97c2dfcd73caff160b65aa39e2', 'client');
 
 -- --------------------------------------------------------
 
@@ -263,24 +197,7 @@ CREATE TABLE `possède` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
-INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
-( 0, 0);
-INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
-( 1, 1);
-INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
-( 2, 2);
-INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
-( 0, 3);
-INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
-( 1, 4);
-INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
-( 2, 5);
-INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
-( 0, 6);
-INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
-( 1, 7);
-INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
-( 2, 8);
+
 --
 -- Structure de la table `prendre`
 --
@@ -291,12 +208,7 @@ CREATE TABLE `prendre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
-INSERT INTO `prendre` (`ID_PATIENT`, `ID_CONSUTATION`) VALUES
-( 6,0 );
-INSERT INTO `prendre` (`ID_PATIENT`, `ID_CONSUTATION`) VALUES
-( 6,1 );
-INSERT INTO `prendre` (`ID_PATIENT`, `ID_CONSUTATION`) VALUES
-( 6,2 );
+
 --
 -- Structure de la table `proposer`
 --
@@ -317,6 +229,238 @@ CREATE TABLE `recette` (
   `Nom` varchar(50) DEFAULT NULL,
   `Apport_Calorique` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `relier`
+--
+
+CREATE TABLE `relier` (
+  `ID_REGIME` int(11) NOT NULL,
+  `ID_CALENDRIER` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+--
+-- Structure de la table `réaliser`
+--
+
+CREATE TABLE `réaliser` (
+  `ID_PATIENT` int(11) NOT NULL,
+  `ID_OBJECTIF` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `régime`
+--
+
+CREATE TABLE `régime` (
+  `ID_REGIME` int(11) NOT NULL,
+  `Apport_Calorique` int(11) DEFAULT NULL,
+  `Type` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+--
+-- Structure de la table `suivre`
+--
+
+CREATE TABLE `suivre` (
+  `ID_PATIENT` int(11) NOT NULL,
+  `ID_ABONNEMENT` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+--
+-- Structure de la table `s_abonne`
+--
+
+CREATE TABLE `s_abonne` (
+  `ID_NUTRITIONNISTE` int(11) NOT NULL,
+  `ID_ABONNEMENT` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+--
+-- Structure de la table `type`
+--
+
+CREATE TABLE `type` (
+  `ID_OBJECTIF` int(11) NOT NULL,
+  `ID_TYPEO` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `type1`
+--
+
+CREATE TABLE `type1` (
+  `ID_RECETTE` int(11) NOT NULL,
+  `Id_TYPER` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `typec`
+--
+
+CREATE TABLE `typec` (
+  `ID_TYPEC` int(11) NOT NULL,
+  `Type` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+-- Structure de la table `typecu`
+--
+
+CREATE TABLE `typecu` (
+  `ID_CU` int(11) NOT NULL,
+  `Type` varchar(50) DEFAULT NULL,
+  `Style` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `typeo`
+--
+
+CREATE TABLE `typeo` (
+  `ID_TYPEO` int(11) NOT NULL,
+  `Type` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `typer`
+--
+
+CREATE TABLE `typer` (
+  `Id_TYPER` int(11) NOT NULL,
+  `Type` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Index pour les tables déchargées
+--
+INSERT INTO `abonnement` (`ID_ABONNEMENT`, `Type`, `Prix`) VALUES
+(0, 'loan', '0 euro');
+INSERT INTO `abonnement` (`ID_ABONNEMENT`, `Type`, `Prix`) VALUES
+(1, 'premium', '10 euro');
+INSERT INTO `abonnement` (`ID_ABONNEMENT`, `Type`, `Prix`) VALUES
+(2, 'VIP', '20 euro');
+INSERT INTO `associer` (`ID_CONSULTATION`, `ID_TYPEC`) VALUES
+(0, 0);
+INSERT INTO `associer` (`ID_CONSULTATION`, `ID_TYPEC`) VALUES
+(1, 1);
+INSERT INTO `associer` (`ID_CONSULTATION`, `ID_TYPEC`) VALUES
+(2, 2);
+INSERT INTO `attribuer` (`ID_PATIENT`, `ID_REGIME`) VALUES
+(6, 0);
+INSERT INTO `calendrier` (`ID_CALENDRIER`, `Debut`, `Fin`) VALUES
+(0, '2022-09-24', '2022-10-24');
+INSERT INTO `calendrier` (`ID_CALENDRIER`, `Debut`, `Fin`) VALUES
+(1, '2022-07-12', '2022-07-25');
+INSERT INTO `calendrier` (`ID_CALENDRIER`, `Debut`, `Fin`) VALUES
+(2, '2022-07-10', '2023-01-10');
+INSERT INTO `categoriser` (`ID_CUISINIER`, `ID_CU`) VALUES
+(0, 0);
+INSERT INTO `categoriser` (`ID_CUISINIER`, `ID_CU`) VALUES
+(1, 1);
+INSERT INTO `categoriser` (`ID_CUISINIER`, `ID_CU`) VALUES
+(2, 2);
+INSERT INTO `conseille` (`ID_PATIENT`, `ID_NUTRITIONNISTE`) VALUES
+(6, 0);
+INSERT INTO `consultation` (`ID_CONSULTATION`, `Intitulé`, `Date_Rendez_Vous`,`Prix`) VALUES
+(0,'premiere rencontre', '2022-07-10', '10 euro');
+INSERT INTO `consultation` (`ID_CONSULTATION`, `Intitulé`, `Date_Rendez_Vous`,`Prix`) VALUES
+(1,'prise de masse', '2022-08-10', '10 euro');
+INSERT INTO `consultation` (`ID_CONSULTATION`, `Intitulé`, `Date_Rendez_Vous`,`Prix`) VALUES
+(2,'perte de poids', '2022-09-10', '10 euro');
+INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
+(0, 0);
+INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
+(1, 1);
+INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
+(2, 2);
+INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
+(3, 0);
+INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
+(4, 1);
+INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
+(5, 2);
+INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
+(6, 0);
+INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
+(7, 1);
+INSERT INTO `cuisinier` (`ID_RECETTE`, `ID_CUISINIER`) VALUES
+(8, 2);
+INSERT INTO `cuisinier` (`ID_CUISINIER`, `Nom`, `Prénom`, `Grade`, `Pays`) VALUES
+(0, 'Etchebest', 'Philippe', 'chef étoilé', 'france');
+INSERT INTO `cuisinier` (`ID_CUISINIER`, `Nom`, `Prénom`, `Grade`, `Pays`) VALUES
+(1, 'Ducasse', 'Alain', 'chef étoilé', 'france');
+INSERT INTO `cuisinier` (`ID_CUISINIER`, `Nom`, `Prénom`, `Grade`, `Pays`) VALUES
+(2, 'Passard', 'Alain', 'chef étoilé', 'france');
+INSERT INTO `diagnostique` (`ID_NUTRITIONNISTE`, `ID_CONSULTATION`) VALUES
+(0, 0);
+INSERT INTO `diagnostique` (`ID_NUTRITIONNISTE`, `ID_CONSULTATION`) VALUES
+(0, 1);
+INSERT INTO `diagnostique` (`ID_NUTRITIONNISTE`, `ID_CONSULTATION`) VALUES
+(0, 2);
+INSERT INTO `nutritionniste` (`ID_NUTRITIONNISTE`, `Nom`, `Prénom`, `Ville`, `Téléphone`,`Réseaux`) VALUES
+(0, 'Lacombe', 'Francoise', 'Paris', '0658965423','@FrLacombe');
+INSERT INTO `objectif` (`ID_OBJECTIF`, `Intitulé`) VALUES
+(0, 'Perte de 10 kilos');
+INSERT INTO `objectif` (`ID_OBJECTIF`, `Intitulé`) VALUES
+(1, 'Prise de 5 kilos');
+INSERT INTO `objectif` (`ID_OBJECTIF`, `Intitulé`) VALUES
+(2, 'Manger plus équilibré');
+INSERT INTO `patient` (`ID_PATIENT`, `Nom`, `Prénom`, `Age`, `Poids`, `Taille`, `IMC`, `Telephone`, `Mail`, `password`, `user_type`) VALUES
+(6, 'oui', 'oui', 8, NULL, NULL, NULL, '0651497986', 'oui@gmail.com', 'cc8c0a97c2dfcd73caff160b65aa39e2', 'client');
+INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
+( 0, 0);
+INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
+( 1, 1);
+INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
+( 2, 2);
+INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
+( 0, 3);
+INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
+( 1, 4);
+INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
+( 2, 5);
+INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
+( 0, 6);
+INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
+( 1, 7);
+INSERT INTO `possède` (`ID_REGIME`, `ID_RECETTE`) VALUES
+( 2, 8);
+INSERT INTO `prendre` (`ID_PATIENT`, `ID_CONSUTATION`) VALUES
+( 6,0 );
+INSERT INTO `prendre` (`ID_PATIENT`, `ID_CONSUTATION`) VALUES
+( 6,1 );
+INSERT INTO `prendre` (`ID_PATIENT`, `ID_CONSUTATION`) VALUES
+( 6,2 );
+INSERT INTO `réaliser` (`ID_PATIENT`, `ID_OBJECTIF`) VALUES
+( 6,0 );
+INSERT INTO `régime` (`ID_REGIME`, `Apport_Calorique`, `Type`) VALUES
+(0, '2500', 'végétarien');
+INSERT INTO `régime` (`ID_REGIME`, `Apport_Calorique`, `Type`) VALUES
+(1, '2500', 'healthy');
+INSERT INTO `régime` (`ID_REGIME`, `Apport_Calorique`, `Type`) VALUES
+(2, '2500', 'Végan');
+INSERT INTO `suivre` (`ID_PATIENT`, `ID_ABONNEMENT`) VALUES
+( 6,1 );
 INSERT INTO `recette` (`ID_RECETTE`, `Nom`, `Apport_Calorique`) VALUES
 (0, 'Salade de légume', '1000');
 INSERT INTO `recette` (`ID_RECETTE`, `Nom`, `Apport_Calorique`) VALUES
@@ -335,106 +479,16 @@ INSERT INTO `recette` (`ID_RECETTE`, `Nom`, `Apport_Calorique`) VALUES
 (7, 'salade crevettes avocats', '750');
 INSERT INTO `recette` (`ID_RECETTE`, `Nom`, `Apport_Calorique`) VALUES
 (8, 'brique a la viande hachées', '1300');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `relier`
---
-
-CREATE TABLE `relier` (
-  `ID_REGIME` int(11) NOT NULL,
-  `ID_CALENDRIER` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-INSERT INTO `prendre` (`ID_REGIME`, `ID_CALENDRIER`) VALUES
-( 0,0 );
-INSERT INTO `prendre` (`ID_REGIME`, `ID_CALENDRIER`) VALUES
-( 1,1);
-INSERT INTO `prendre` (`ID_REGIME`, `ID_CALENDRIER`) VALUES
-( 2,2 );
---
---
--- Structure de la table `réaliser`
---
-
-CREATE TABLE `réaliser` (
-  `ID_PATIENT` int(11) NOT NULL,
-  `ID_OBJECTIF` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-INSERT INTO `réaliser` (`ID_PATIENT`, `ID_OBJECTIF`) VALUES
-( 6,0 );
---
--- Structure de la table `régime`
---
-
-CREATE TABLE `régime` (
-  `ID_REGIME` int(11) NOT NULL,
-  `Apport_Calorique` int(11) DEFAULT NULL,
-  `Type` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-INSERT INTO `régime` (`ID_REGIME`, `Apport_Calorique`, `Type`) VALUES
-(0, '2500', 'végétarien');
-INSERT INTO `régime` (`ID_REGIME`, `Apport_Calorique`, `Type`) VALUES
-(1, '2500', 'healthy');
-INSERT INTO `régime` (`ID_REGIME`, `Apport_Calorique`, `Type`) VALUES
-(2, '2500', 'Végan');
---
--- Structure de la table `suivre`
---
-
-CREATE TABLE `suivre` (
-  `ID_PATIENT` int(11) NOT NULL,
-  `ID_ABONNEMENT` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
 INSERT INTO `suivre` (`ID_PATIENT`, `ID_ABONNEMENT`) VALUES
 ( 6,1 );
---
--- Structure de la table `s_abonne`
---
-
-CREATE TABLE `s_abonne` (
-  `ID_NUTRITIONNISTE` int(11) NOT NULL,
-  `ID_ABONNEMENT` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
 INSERT INTO `s_abonne` (`ID_NUTRITIONNISTE`, `ID_ABONNEMENT`) VALUES
 ( 0,1 );
---
---
--- Structure de la table `type`
---
-
-CREATE TABLE `type` (
-  `ID_OBJECTIF` int(11) NOT NULL,
-  `ID_TYPEO` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
 INSERT INTO `type` (`ID_OBJECTIF`, `ID_TYPEO`) VALUES
 ( 0,0);
 INSERT INTO `type` (`ID_OBJECTIF`, `ID_TYPEO`) VALUES
 ( 1,1);
 INSERT INTO `type` (`ID_OBJECTIF`, `ID_TYPEO`) VALUES
 ( 2,2);
---
--- Structure de la table `type1`
---
-
-CREATE TABLE `type1` (
-  `ID_RECETTE` int(11) NOT NULL,
-  `Id_TYPER` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
 INSERT INTO `type1` (`ID_RECETTE`, `ID_TYPER`) VALUES
 ( 0,0);
 INSERT INTO `type1` (`ID_RECETTE`, `ID_TYPER`) VALUES
@@ -453,73 +507,32 @@ INSERT INTO `type1` (`ID_RECETTE`, `ID_TYPER`) VALUES
 ( 7,1);
 INSERT INTO `type1` (`ID_RECETTE`, `ID_TYPER`) VALUES
 ( 8,2);
---
--- Structure de la table `typec`
---
-
-CREATE TABLE `typec` (
-  `ID_TYPEC` int(11) NOT NULL,
-  `Type` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
 INSERT INTO `typec` (`ID_TYPEC`, `Type`) VALUES
 (0, 'premiere consultation');
 INSERT INTO `typec` (`ID_TYPEC`, `Type`) VALUES
 (1, 'Prise de masses');
 INSERT INTO `typec` (`ID_TYPEC`, `Type`) VALUES
 (2, 'perte de poids');
---
--- Structure de la table `typecu`
---
-
-CREATE TABLE `typecu` (
-  `ID_CU` int(11) NOT NULL,
-  `Type` varchar(50) DEFAULT NULL,
-  `Style` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
 INSERT INTO `typecu` (`ID_CU`, `Type`, `Style`) VALUES
 (0, 'repas pour sportif','Gastronomie Francaise');
 INSERT INTO `typecu` (`ID_CU`, `Type`, `Style`) VALUES
 (1, 'perte de poids',' Asian Food');
 INSERT INTO `typecu` (`ID_CU`, `Type`, `Style`) VALUES
 (2, 'prise de masses',' Italian Food');
---
--- Structure de la table `typeo`
---
-
-CREATE TABLE `typeo` (
-  `ID_TYPEO` int(11) NOT NULL,
-  `Type` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO `typeo` (`ID_TYPER`, `Type`) VALUES
 (0, 'Perte de poids');
 INSERT INTO `typeo` (`ID_TYPER`, `Type`) VALUES
 (1, 'Prise de masses');
 INSERT INTO `typeo` (`ID_TYPER`, `Type`) VALUES
 (2, 'maintient du poids');
--- --------------------------------------------------------
-
---
--- Structure de la table `typer`
---
-
-CREATE TABLE `typer` (
-  `Id_TYPER` int(11) NOT NULL,
-  `Type` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT INTO `typer` (`ID_TYPER`, `Type`) VALUES
 (0, 'Perte de poids');
 INSERT INTO `typer` (`ID_TYPER`, `Type`) VALUES
 (1, 'Prise de masses');
 INSERT INTO `typer` (`ID_TYPER`, `Type`) VALUES
 (2, 'maintient du poids');
---
--- Index pour les tables déchargées
---
 
+--
 --
 -- Index pour la table `abonnement`
 --
