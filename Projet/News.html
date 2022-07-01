@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>BMI</title>
+		<link href="bmi.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+		</head>
+	<body>
+		<div class="menu-bar">
+	    <ul>
+	      <li><a href="Accueil.html">Accueil</a></li>
+	      <li class="active"><a href="#">BMI</a></li>
+	      <li><a href="Recettes.html">Recettes</a></li>
+	    </ul></div>
+
+	    <input type="checkbox" id="check">
+    	<label for="check">
+	      <i class="fas fa-bars" id="btn"></i>
+	      <i class="fas fa-times" id="cancel"></i>
+	    </label>
+		<div class="sidebar">  
+			<header>En Savoir Plus </header>
+			<ul>
+				<li><a href="Login.html"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+			</ul>
+		</div> 
+		
+		<div id="Calculator">
+
+			<h2>BMI Calculator</h2><br>
+
+			<p class="text">Height</p>
+			<input type="number" id="h" v-model="height"  @input="bmiCompute();bmiResult()" placeholder="Enter in cm">
+
+			<p class="text">Weight</p>
+			<input type="number" id="w" v-model="weight" @input="bmiCompute();bmiResult()" @input="bmiResult()" placeholder="Enter in kg">
+			<div v-if="this.height != 0 && this.weight !=0">
+			<p ><br> Your bmi is {{ bmi }}</p>
+			<p ><br> You are {{affichage}}</p>	
+			</div>
+
+			<p id="result"></p>
+			<button id="btn" @click="bmiCompute()">Calculate</button>
+
+		</div >
+
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+		new Vue({
+			el: "#Calculator",
+			data() {
+				return {
+					bmi : '',
+					weight: '',
+					height: '',	
+					affichage : '',
+				}
+			},
+			methods: {
+			 	bmiCompute () {
+					this.bmi = (this.weight/((this.height*this.height)/(100*100))).toFixed(2) 
+					 console.log(this.bmi);
+				},
+				bmiResult(){
+					let bmi = this.bmi;
+					if (this.bmi < 18.5){
+						this.affichage = "Underweight";
+						console.log(this.affichage);
+					}
+					if (this.bmi > 18.5 && this.bmi < 25){
+						this.affichage = "Healthy" ;
+						console.log(this.affichage);
+					}
+					if (bmi > 25 && bmi < 30){
+						this.affichage = "Overweight" ;
+						console.log(this.affichage);
+					}
+					if (bmi > 30 && bmi < 40){
+						this.affichage = "Obesity" ;
+						console.log(this.affichage);
+					}
+					if (bmi > 40){
+						this.affichage = "Extreme Obesity" ;
+						console.log(this.affichage);
+					}
+				}
+			}
+
+		});
+		</script>
+
+	    <footer class="sticky-footer">
+	      <ul>
+	        <li><a href="Propos.html">À propos</a></li>
+	      </ul>
+	      <p>© Copyright VLEWM 2021.</p>
+	    </footer>
+    
+	</body>
+</html>

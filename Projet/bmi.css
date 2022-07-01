@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+
+body{
+	background-color: #C0FCC7;
+	background-size: cover;
+	background-position: center; 
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+#BMI {
+  font-size: larger;
+  padding-top: 30px;
+  }
+  
+  #Calculator
+  {
+      width: 500px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: #fff;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 1px 1px 20px #ffffff;
+      text-align: center;
+  }
+
+
+  #w,#h
+  {
+      color: #222f3e;
+      text-align: left;
+      font-size: 20px;
+      font-weight: 200;
+      outline: none;
+      border: none;
+      background: none;
+      border-bottom: 1px solid #341f97;
+      border-radius : 3px;
+      width: 200px;
+      transition: border-width 0.5s, width 0.5s ;
+  }
+  
+  #w:focus, #h:focus
+  {
+      border-width : 4px ;
+      width: 300px;
+      transition: border-width 0.3s, width 0.5s;
+    
+  }
+  
+  #result
+  {
+      color: #341f97;
+  }
+  
+  #btn
+  {
+      font-family: inherit;
+      margin-top: 10px;
+      border: none;
+      color: #fff;
+      background-image: linear-gradient(120deg, #ced6e0,#2f3542);
+      width: 150px;
+      padding: 10px;
+      border-radius: 30px;
+      outline: none;
+      cursor: pointer;
+      transition: .3s;
+      display :none ;
+  }
+  
+  #btn:hover
+  {
+      box-shadow: 1px 1px 10px #341f97;
+  }
+    
+#contact:hover
+{
+    box-shadow: 1px 1px 10px #341f97;
+}
+
+h2
+{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.text
+{
+    text-align: left;
+    margin-left: 150px;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/*sidebar*/
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #03350D;
+  transition: all .5s ease;
+}
+.sidebar header {
+  font-size: 22px;
+  color: white;
+  line-height: 77px;
+  text-align: center;
+  background: #046318;
+  user-select: none;
+}
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  transition: .4s;
+}
+
+.sidebar ul li:hover a{
+  padding-left: 50px;
+}
+.sidebar ul a i{
+  margin-right: 16px;
+}
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  position: absolute;
+  background: #098D25;
+  border-radius: 3px;
+  cursor: pointer;
+}
+label #btn{
+  left: 15px;
+  top: 15px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+  transition: all .5s;
+}
+label #cancel{
+  z-index: 1111;
+  left: -195px;
+  top: 22px;
+  font-size: 30px;
+  color: white;
+  padding: 4px 9px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  left: 250px;
+  top: 50px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel{
+  left: 195px;
+  top: 20px;
+}
+#check:checked ~ section{
+  margin-left: 250px;
+  top: 50px;
+}
+section{
+  transition: all .5s;
+}
+
+
+/* top bar*/
+.menu-bar{
+	background: rgb(0,100,0);
+	text-align: center;
+}
+.menu-bar ul{
+	display: inline-flex;
+	list-style: none;
+	color: #fff;
+}
+.menu-bar ul li{
+	width: 120px;
+	margin: 15px;
+	padding: 15px;
+}
+.menu-bar ul li a{
+	text-decoration: none;
+	color: #fff;
+}
+@media (max-width:640px){
+	.menu-bar ul{
+	display: inline-flex;
+	list-style: none;
+	margin-left:70px;
+	color: #fff;
+	}
+	.menu-bar ul li{
+	width: 25%;
+	font-size: 12px;
+	padding-left: 3%;
+	margin-left: 2%;
+	}
+}
+.active, .menu-bar ul li:hover{
+	background: #2bab0d ;
+	border-radius: 3px;
+}
+/*Bottom bar*/
+
+.sticky-footer{
+	position: sticky;
+	margin-top: 35%;
+	padding: 2em;
+	background: rgb(0,100,0);
+	text-align: center;
+	margin-bottom: auto;
+}
+.sticky-footer ul{
+	display: inline-flex;
+	list-style: none;
+	color: #fff;
+}
+.sticky-footer ul li{
+	width: 120px;
+	margin: 62px;
+	padding: 15px;
+}
+.sticky-footer ul li a{
+	text-decoration: none;
+	color: #fff;
+}
+.active, .sticky-footer ul li:hover{
+	background: #2bab0d ;
+	border-radius: 3px;
+}
